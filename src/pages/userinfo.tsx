@@ -68,7 +68,7 @@ function Userinfo() {
               <Form.Item<User>
                 label="Email"
                 name="email"
-                rules={[{ required: true, message: 'Please input your email!' }]}>
+                rules={[{ required: true, type: 'email', message: 'Please input your email!' }]}>
                 <Input />
               </Form.Item>
 
