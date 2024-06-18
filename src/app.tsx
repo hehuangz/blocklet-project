@@ -1,19 +1,12 @@
 import './app.css';
 
-import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-
-import About from './pages/about';
-import Home from './pages/home';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Userinfo from './pages/userinfo';
 
 function App() {
   return (
     <div className="app">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
+      <Userinfo />
     </div>
   );
 }

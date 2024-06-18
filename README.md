@@ -17,11 +17,14 @@ This blocklet is a dapp project, which means this is a full-stack application. I
 - screenshots/ - Screenshots
 - api/
   - src/ - Api side code
+    - controllers/ - Api side controllers
     - hooks/ - blocklet lifecycle hooks
     - libs/ - Api side libraries
     - middlewares/ - Api side middlewares
+    - models/- Api side models
     - routes/ - Api side routes
     - index.ts - Api side entry point
+    - init-db/ - init database
 - src/ - Client side code (A standard react app structure)
 - .env - Environment variables
 - .env.local - Local environment variables
@@ -53,7 +56,8 @@ This blocklet is a dapp project, which means this is a full-stack application. I
 
 3. Go to the project directory `cd [name]`
 4. Install dependencies: `npm install` or `yarn`
-5. Start development server: `blocklet dev`
+5. Init database: `npm run init-db` or `yarn init-db`
+6. Start development server: `blocklet dev`
 
 ## Bundle
 
@@ -124,6 +128,22 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
   Push your code to Github main/master branch, or make a pull request to the main/master branch.
   The CI workflow will automatically upload a new version to a store.
 
+## Database
+
+```bash
+# Enter database
+sqlite3 database.db
+
+# Display all tables
+.tables
+
+# Display the table structure
+.schema users
+
+# Display the table's data
+SELECT * FROM users;
+```
+
 ## Q & A
 
 1. Q: How to change a blocklet's name?
@@ -155,3 +175,4 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
 
 The code is licensed under the Apache 2.0 license found in the
 [LICENSE](LICENSE) file.
+
